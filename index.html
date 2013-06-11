@@ -14,6 +14,8 @@
 		<link rel="stylesheet" href="css/theme/solarized.css" id="theme">
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Custom -->
+    <link rel="stylesheet" href="css/custom.css">
 
 		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
 		<script>
@@ -29,7 +31,7 @@
 		<div class="reveal">
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>
+				<section id="home">
 					<h1>Twig</h1>
 					<h2>#dcparis13</h2>
 					<p>
@@ -37,18 +39,30 @@
 					</p>
 				</section>
 
-				<section>
-          <h1>Menu</h1>
-					<ul>
-						<li>Nous, c'est qui ?</li>
-						<li>Twig, c'est quoi ?</li>
-            <li>Drupal &amp; Twig, c'est bon ?</li>
-            <li>Les exemples, c'est quand ?</li>
+        <section>
+          <p>
+            Cette présentation est <strong>déjà</strong> disponible !!
+          </p>
+          <p>
+            <a href="http://opi.github.io/twig-drupalcamp">opi.github.io/twig-drupalcamp</a>
+            <br>
+            <a href="https://github.com/opi/twig-drupalcamp">github.com/opi/twig-drupalcamp</a>
+          </p>
+        </section>
+
+				<section id="menu">
+          <h1>Au menu</h1>
+					<ul class="discret">
+						<li><a href="#/nous">Nous, c'est qui ?</a></li>
+            <li><a href="#/twig">Twig, c'est quoi ?</a></li>
+            <li><a href="#/drupal-twig">Drupal &amp; Twig, c'est bon ?</a></li>
+            <li><a href="#/exemples">Les exemples, c'est quand ?</a></li>
+            <li><a href="#/questions">? ? ?</a></li>
 					</ul>
 				</section>
 
         <section>
-          <section>
+          <section id="nous">
             <h1>Nous, c'est qui ?</h1>
           </section>
           
@@ -67,7 +81,7 @@
           </section>
           
           <section>
-            <h1>JulienD</h1>
+            <h1>Julien D</h1>
             <p>
               Développeur Drupal
               <br>Commerce Guys
@@ -82,25 +96,26 @@
 
         </section>
 
-        <section>
+        <section id="twig">
           <section>
             <h1>Twig, c'est quoi ?</h1>
+            <p class="fragment">Moteur de template PHP</p>
           </section>
         </section>
 
-        <section>
+        <section id="drupal-twig">
           <section>
             <h1>Drupal &amp; Twig,<br> c'est bon ?</h1>
           </section>
         </section>
 
-        <section>
+        <section id="exemples">
           <section>
             <h1>Les exemples,<br> c'est quand ?</h1>
           </section>
         </section>
 
-        <section>
+        <section id="questions">
           <section>
             <h1>? ? ?</h1>
           </section>
@@ -112,10 +127,12 @@
           </section>
         </section>
 
-        <section></section>
-        <section data-markdown></section>
-
 			</div>
+
+      <footer id="footer">
+        <a href="#/home" class="discret">Twig &amp; Drupal</a> - DrupalCamp Paris 2013 - opi &amp; JulienD
+      </footer>
+
 		</div>
 
 		<script src="lib/js/head.min.js"></script>

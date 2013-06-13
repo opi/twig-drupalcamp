@@ -1,0 +1,39 @@
+
+/* ************ GLOBAL ************ */
+.reveal h1 {
+  margin-bottom:.5em;
+}
+
+.reveal a.discret,
+.reveal .discret a {color:#657b83;}
+
+
+/* ************ HOME ************ */
+
+
+/* ************ MENU ************ */
+#menu li {
+  margin-bottom:0.75em;
+}
+#menu li a {}
+
+/* ************ NOUS ************ */
+.reveal .user-links {
+  margin-top:1em;
+}
+
+
+
+
+
+
+/* ************ FOOTER ************ */
+#footer {
+  position:absolute;
+  bottom:1em;
+  left:1%;
+	font-size:small;
+}
+#footer a {
+  position:relative;z-index:1; /* allow:click; */
+}

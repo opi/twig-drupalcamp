@@ -65,7 +65,7 @@
           <section id="nous">
             <h1>Nous, c'est qui ?</h1>
           </section>
-          
+
           <section>
             <h1>opi</h1>
             <p>
@@ -79,7 +79,7 @@
               <li><a href="http://www.olivierpierre.net">olivierpierre.net</a></li>
             </ul>
           </section>
-          
+
           <section>
             <h1>Julien D</h1>
             <p>
@@ -97,10 +97,182 @@
         </section>
 
         <section id="twig">
+
           <section>
             <h1>Twig, c'est quoi ?</h1>
-            <p class="fragment">Moteur de template PHP</p>
+            <p>Moteur de template PHP</p>
+            <p>Par Fabien Potencier, créateur de Symphony</p>
           </section>
+
+          <section>
+            <h1>Les avantages</h1>
+            <p>
+              <b>Sécurisé:</b> No PHP !<br>
+              <b>Documenté:</b> <a href="http://twig.sensiolabs.org/documentation">twig.sensiolabs.org/documentation</a><br>
+              <b>Populaire:</b> Zend, CodeIgniter, CakePHP
+            </p>
+          </section>
+
+          <section>
+            <h1>La syntaxe</h1>
+            <p>Le caractère important est l'accolade</p>
+            <p class="large"><strong>{ }</strong></p>
+          </section>
+
+          <section>
+            <h1>La syntaxe</h1>
+            <h2>Les commentaires</h2>
+            <pre><code data-trim>
+              {# Ici un commentaire #}
+            </code></pre>
+          </section>
+
+          <section>
+            <h1>La syntaxe</h1>
+            <h2>Affichage de variable</h2>
+            <pre><code data-trim>
+              <h1>{{ title }}</h1>
+            </code></pre>
+            <p>Équivalent php template:</p>
+            <pre><code data-trim>
+              <h1>&lt;?php print $title; ?></h1>
+            </code></pre>
+          </section>
+
+          <section>
+            <h1>La syntaxe</h1>
+            <h2>Plongée dans les variables</h2>
+            <pre><code data-trim>
+              {{ node.field_description }}
+            </code></pre>
+            <pre><code data-trim>
+              &lt;div {{item.attributes}}&gt;{{ item.data }}&lt;/div&gt;
+            </code></pre>
+          </section>
+
+          <section>
+            <h1>La syntaxe</h1>
+            <h2>Concaténations de variables</h2>
+            <pre><code data-trim>
+              {{ "Rédigé par " ~ node.author ~ "." }}
+            </code></pre>
+          </section>
+
+          <section>
+            <h1>La syntaxe</h1>
+            <h2>Les filtres</h2>
+            <pre><code data-trim>
+              <h1>{{ title|capitalize }}</h1>
+            </code></pre>
+            <p>Les filtres sont chainables</p>
+            <pre><code data-trim>
+              <h1>{{ title|uppercase|nl2br }}</h1>
+            </code></pre>
+            <p>lower, join, number_format, replace, slice, sort, ...</p>
+            <p class="doc"><a href="http://twig.sensiolabs.org/doc/filters/index.html">twig.sensiolabs.org/doc/filters</a></p>
+          </section>
+
+          <section>
+            <h1>La syntaxe</h1>
+            <h2>Les fonctions</h2>
+            <pre><code data-trim>
+              {{ node.created|date("d/m/Y") }}
+            </code></pre>
+            <p>cycle, range, include, parent, random, ...</p>
+            <p class="doc"><a href="http://twig.sensiolabs.org/doc/functions/index.html">twig.sensiolabs.org/doc/functions</a></p>
+          </section>
+
+          <section>
+            <h1>La syntaxe</h1>
+            <h2>Structures de controle</h2>
+            <pre><code data-trim>
+{% if ... %}
+{% else %}
+{% endif %}
+            </code></pre>
+            <pre><code data-trim>
+{% for i in 0..10 %}
+  {{ i }}
+{% endfor %}
+            </code></pre>
+            <p>autoescape, do, for, from, include, ...</p>
+            <p class="doc"><a href="http://twig.sensiolabs.org/doc/tags/index.html">twig.sensiolabs.org/doc/tags</a></p>
+          </section>
+
+          <section>
+            <h1>La syntaxe</h1>
+            <h2>Structures de controle : for</h2>
+            <p>Clé / valeur</p>
+            <pre><code data-trim>
+{% for key, user in users %}
+  <span class="user-{{ key }}">{{ user.name|e }}</span>
+{% endfor %}
+            </code></pre>
+            <p>For avec condition</p>
+            <pre><code data-trim>
+{% for user in users if user.active %}
+  <span>{{ user.name|e }}</span>
+{% endfor %}
+            </code></pre>
+          </section>
+
+          <section>
+            <h1>La syntaxe</h1>
+            <h2>Structures de controle : for</h2>
+            <p>Cas d'un tableau vide</p>
+            <pre><code data-trim>
+{% for user in users %}
+  <span>{{ user.name|e }}</span>
+{% else %}
+  <span class="empty">No user found</span>
+{% endfor %}
+            </code></pre>
+          </section>
+
+          <section>
+            <h1>Les tests</h1>
+            <pre><code data-trim>
+{% if foo is empty %}
+  <span>Empty</span>
+{% endif %}
+            </code></pre>
+            <pre><code data-trim>
+{% if foo is defined %}
+{% endif %}
+            </code></pre>
+          </section>
+
+          <section>
+            <h1>Math &amp; Logic</h1>
+            <pre><code data-trim>{{ 1 + 1 }}</code></pre>
+            <pre><code data-trim>{{ 2 * 5 }}</code></pre>
+            <pre><code data-trim>{{ 20 // 7 }} {# returns 2 #}</code></pre>
+            <pre><code data-trim>{% if foo and bar %}</code></pre>
+            <pre><code data-trim>{% if foo or bar %}</code></pre>
+            <pre><code data-trim>{% if foo in [1, 2, 3] %}</code></pre>
+            <pre><code data-trim>{% if foo not in [1, 2, 3] %}</code></pre>
+            <pre><code data-trim>{{ foo ? 'yes' : 'no' }}</code></pre>
+            <p></p>
+            <p class="doc"><a href="http://twig.sensiolabs.org/doc/templates.html#math">twig.sensiolabs.org/doc/templates.html#math</a></p>
+          </section>
+
+          <section>
+            <h1>Extensions</h1>
+            <p>
+              Permet d'ajouter ses propres tag, filtres &amp; fonctions
+            </p>
+            <pre><code data-trim>
+&lt;?php
+$filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
+    return str_replace('spip', 'drupal', $string);
+});
+            </code></pre>
+            <pre><code data-trim>
+              {{ node.body|spip2drupal }}
+            </code></pre>
+          </section>
+
+
         </section>
 
         <section id="drupal-twig">
@@ -148,7 +320,9 @@
 				history: true,
 				center: true,
 
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        rollingLinks: false,
+
+				// theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
 				// Optional libraries used to extend on reveal.js
@@ -157,8 +331,8 @@
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					// { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					// { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
 					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]

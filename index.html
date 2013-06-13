@@ -383,7 +383,7 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
             <h2>Debug</h2>
             <p>Dans settings.php</p>
             <pre><code data-trim>
-              $settings[twig_debug] = TRUE;
+              $settings['twig_debug'] = TRUE;
             </code></pre>
             <p>
               Source avec commentaires détaillés (= devel_themer)
@@ -408,12 +408,12 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
             <p>Dans settings.php</p>
             <p>Recompilation des templates à chaque changements</p>
             <pre><code data-trim>
-              $settings[twig_auto_reload] = TRUE;
+              $settings['twig_auto_reload'] = TRUE;
             </code></pre>
 
             <p>Désactivation du cache des templates Twig</p>
             <pre><code data-trim>
-              $settings[twig_cache] = FALSE;
+              $settings['twig_cache'] = FALSE;
             </code></pre>
           </section>
 

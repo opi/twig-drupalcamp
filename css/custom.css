@@ -21,7 +21,12 @@
   font-style: italic;
 }
 
-.reveal pre + p {margin-top:1em;}
+.reveal pre + p,
+.reveal p + p {margin-top:1em;}
+
+.reveal pre.long {
+  width:100%;
+}
 
 /* ************ HOME ************ */
 

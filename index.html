@@ -299,7 +299,126 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
           <section>
             <h1>Drupal &amp; Twig,<br> c'est bon ?</h1>
           </section>
+
+          <section>
+            <h1>Drupal &amp; Twig</h1>
+            <h2>Pourquoi ?</h2>
+            <p>
+              Formats de données ($node->nid, $attributes['class'])
+              <br>
+              print $foo; VS. print render($foo);
+              <br>
+              theme_node() ou node.tpl ?
+              <br>
+              =
+              <br>
+              <strong>Frustration</strong> des themeurs
+            </p>
+          </section>
+
+          <section>
+            <h1>Drupal &amp; Twig</h1>
+            <h2>Inconvenients</h2>
+            <p>
+              Nouvelle syntaxe à apprendre
+              <br>
+              Migration pour les mainteneurs de modules
+            </p>
+          </section>
+
+          <section>
+            <h1>Drupal &amp; Twig</h1>
+            <h2>Avantages</h2>
+            <p>
+              Tout dans des templates (.html.twig)
+              <br>
+              Syntaxe plus simple &amp; lisible
+              <br>
+              =
+              <br>
+              Travail plus simple pour les themeurs
+            </p>
+          </section>
+
+          <section>
+            <h1>Drupal &amp; Twig</h1>
+            <h2>Filtre t</h2>
+            <p>
+              Remplace t()
+            </p>
+            <pre><code data-trim>
+{{ "Read more" | t }}
+            </code></pre>
+            <pre><code data-trim>
+{% set time = node.created | date("d/m/Y") %}
+{{ "Published on @time" | t({'@time' : time}) }}
+            </code></pre>
+          </section>
+
+          <section>
+            <h1>Drupal &amp; Twig</h1>
+            <h2>Fonctions</h2>
+            <p>
+              hide()
+              <br>
+              show()
+            </p>
+            TODO
+          </section>
+
+          <section>
+            <h1>Drupal &amp; Twig</h1>
+            <h2>Debug</h2>
+            <p>Dans les fichiers de templates .html.twig</p>
+            <pre><code data-trim>
+              {{ dump() }}
+            </code></pre>
+            <p><em>
+              Équivalent de var_dump(get_defined_vars());
+            </em></p>
+          </section>
+
+          <section>
+            <h1>Drupal &amp; Twig</h1>
+            <h2>Debug</h2>
+            <p>Dans settings.php</p>
+            <pre><code data-trim>
+              $settings[twig_debug] = TRUE;
+            </code></pre>
+            <p>
+              Source avec commentaires détaillés (= devel_themer)
+            </p>
+            <pre class="long"><code data-trim>
+<!-- THEME DEBUG -->
+<!-- CALL: theme('block') -->
+<!-- FILE NAME SUGGESTIONS:
+  * block--system.html.twig
+  * block--system-main-block.html.twig
+  * block--content.html.twig
+  x block.html.twig-->
+<!-- BEGIN OUTPUT from 'core/modules/block/templates/block.html.twig' -->
+<div class="block block-system" id="block-content">
+...
+            </code></pre>
+          </section>
+
+          <section>
+            <h1>Drupal &amp; Twig</h1>
+            <h2>Debug</h2>
+            <p>Dans settings.php</p>
+            <p>Recompilation des templates à chaque changements</p>
+            <pre><code data-trim>
+              $settings[twig_auto_reload] = TRUE;
+            </code></pre>
+
+            <p>Désactivation du cache des templates Twig</p>
+            <pre><code data-trim>
+              $settings[twig_cache] = FALSE;
+            </code></pre>
+          </section>
+
         </section>
+
 
         <section id="exemples">
           <section>

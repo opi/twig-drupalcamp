@@ -1,12 +1,22 @@
 
 /* ************ GLOBAL ************ */
 .reveal h1 {
-  margin-bottom:.5em;
+  margin-bottom:.25em;
 }
 
 .reveal a.discret,
 .reveal .discret a {color:#657b83;}
 
+.reveal .large {font-size:larger;}
+
+.reveal .doc {
+  font-size:0.7em;
+  margin:2em 2em 0 0;
+  text-align: right;
+  font-style: italic;
+}
+
+.reveal pre + p {margin-top:1em;}
 
 /* ************ HOME ************ */
 

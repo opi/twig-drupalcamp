@@ -4,6 +4,11 @@
   margin-bottom:.25em;
 }
 
+#home h1 {
+  margin:1em;
+}
+#home h1 span {display:inline-block;vertical-align: middle;}
+
 .reveal a.discret,
 .reveal .discret a {color:#657b83;}
 

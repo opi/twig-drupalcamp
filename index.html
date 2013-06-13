@@ -171,6 +171,29 @@
 
           <section>
             <h1>La syntaxe</h1>
+            <h2>Filtre d'échappement</h2>
+            <pre><code data-trim>
+{{ foo|escape }} ou {{ foo|e }}
+            </code></pre>
+            <p>Contextes d'échappements, HTML par defaut</p>
+            <pre><code data-trim>
+{{ foo|e }} équivalent à {{ foo|e('html') }}
+{{ foo|e('js') }}
+{{ foo|e('css') }}
+{{ foo|e('html_attr') }}
+            </code></pre>
+            <p>Échappement automatique</p>
+            <pre><code data-trim>
+{% autoescape %}
+  Tout ce bloc sera échappé {{ foo }}
+{% endautoescape %}
+            </code></pre>
+
+            <p class="doc"><a href="http://twig.sensiolabs.org/doc/filters/escape.html">twig.sensiolabs.org/doc/filters/escape.html</a></p>
+          </section>
+
+          <section>
+            <h1>La syntaxe</h1>
             <h2>Les fonctions</h2>
             <pre><code data-trim>
               {{ node.created|date("d/m/Y") }}

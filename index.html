@@ -215,6 +215,20 @@
 
           <section>
             <h1>La syntaxe</h1>
+            <h2>Nommage des arguments</h2>
+            <pre><code data-trim>
+{{ "now"|date("d-m-Y", "Europe/Paris") }}
+equivalent
+{{ "now"|date(format="d-m-Y", timezone="Europe/Paris") }}
+            </code></pre>
+            <p>Permet de passer qu'un seul argument</p>
+            <pre><code data-trim>
+{{ "now"|date(timezone="Europe/Paris") }}
+            </code></pre>
+          </section>
+
+          <section>
+            <h1>La syntaxe</h1>
             <h2>Structures de controle</h2>
             <pre><code data-trim>
 {% if ... %}

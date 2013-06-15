@@ -343,15 +343,62 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
             <h1>Drupal &amp; Twig</h1>
             <h2>Pourquoi ?</h2>
             <p>
-              Formats de données ($node->nid, $attributes['class'])
+              Plusieurs raisons ont menées à la <strong>frustration</strong> des themeurs
+            </p>
+          </section>
+
+          <section>
+            <h1>Drupal &amp; Twig</h1>
+            <h2>#1 Mixed data type</h2>
+            <p>
+              <b>D7</b> : Rien de normé, on peut manipuler du texte, des tableaux ou encore de objets
               <br>
-              print $foo; VS. print render($foo);
+              $node->nid || $page['content']
+            </p>
+            <p>
+              <b>Twig</b> : Tout est normé. Chaque variable est accessible de la même facon
+            </p>
+          </section>
+
+          <section>
+            <h1>Drupal &amp; Twig</h1>
+            <h2>#2 Methodes d'affichage</h2>
+            <p>
+              <b>D7</b> : print($variables); ou print render($variables);
+            </p>
+            <p>
+              <b>Twig</b> : {{ variables }} suffit et évite les erreurs
+            </p>
+          </section>
+
+          <section>
+            <h1>Drupal &amp; Twig</h1>
+            <h2>#3 Surcharge du markup</h2>
+            <p>
+              <b>D7</b> : Fonctions de theme ou templates
+            </p>
+            <p>
+              <b>Twig</b> : Tout devient un template .html.twig
+            </p>
+            <p>
+              node.tpl.php >>  node.html.twig
               <br>
-              theme_node() ou node.tpl ?
+              theme_table() >> tables.html.twig
+              <!-- // TODO check with Jen if it's in core now ? -->
+            </p>
+          </section>
+
+          <section>
+            <h1>Drupal &amp; Twig</h1>
+            <h2>#4 Manque de sécurité</h2>
+            <p>
+              <b>D7</b> : Tout est accessible tel quel et rien n'est filtré par défaut.
+              Pas de sanitization.
+            </p>
+            <p>
+              <b>Twig</b> : Escape automatique et si vous voulez quelque chose de non sécurisé, il faut le vouloir :)
               <br>
-              =
-              <br>
-              <strong>Frustration</strong> des themeurs
+              La plupart des fonctions php ne sont pas executable ! Fini les requetes SQL dans les templates !
             </p>
           </section>
 

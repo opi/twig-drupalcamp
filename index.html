@@ -80,7 +80,7 @@
           <section>
             <h1>Julien D</h1>
             <p>
-              Développeur Drupal
+              Développeur <strike>&amp; Themeur</strike> Drupal
               <br>Commerce Guys
             </p>
             <ul class="user-links">
@@ -117,9 +117,25 @@
           <section>
             <h1>Les avantages</h1>
             <p>
-              <b>Sécurisé:</b> No PHP !<br>
-              <b>Documenté:</b> <a href="http://twig.sensiolabs.org/documentation">twig.sensiolabs.org/documentation</a><br>
-              <b>Populaire:</b> Zend, CodeIgniter, CakePHP
+              <ul>
+              <li><b>Extensible</b></li>
+              <li><b>Sécurisé:</b> No PHP !</li>
+              <li><b>Orienté objet</b></li>
+              <li><b>Syntax facile</b></li>
+              <li><b>Supporté par les IDEs:</b></li>
+              <li><b>Populaire:</b> Zend, CodeIgniter, CakePHP</li>
+              <li><b>Bien documenté</b></li>
+              <p class="doc"><a href="http://twig.sensiolabs.org/documentation">twig.sensiolabs.org/doc/documentation</a></p>
+              <ul>
+            </p>
+          </section>
+
+          <section>
+            <h1>Les incovénients</h1>
+            <p>
+              <ul>
+              <li><b>Nouveau langage à apprendre</b></li>
+              <ul>
             </p>
           </section>
 
@@ -130,15 +146,14 @@
           </section>
 
           <section>
-            <h1>La syntaxe</h1>
             <h2>Les commentaires</h2>
             <pre><code data-trim>
               {# Ici un commentaire #}
             </code></pre>
+            <p>A utiliser pour les descriptions et commentaires.</p>
           </section>
 
           <section>
-            <h1>La syntaxe</h1>
             <h2>Affichage de variable</h2>
             <pre><code data-trim>
               <h1>{{ title }}</h1>
@@ -150,7 +165,6 @@
           </section>
 
           <section>
-            <h1>La syntaxe</h1>
             <h2>Plongée dans les variables</h2>
             <pre><code data-trim>
               {{ node.field_description }}
@@ -162,7 +176,6 @@
           </section>
 
           <section>
-            <h1>La syntaxe</h1>
             <h2>Concaténations de variables</h2>
             <pre><code data-trim>
               {{ "Rédigé par " ~ node.author ~ "." }}
@@ -170,7 +183,6 @@
           </section>
 
           <section>
-            <h1>La syntaxe</h1>
             <h2>Les filtres</h2>
             <pre><code data-trim>
               <h1>{{ title|capitalize }}</h1>
@@ -179,10 +191,10 @@
             <pre><code data-trim>
               <h1>{{ title|uppercase|nl2br }}</h1>
             </code></pre>
-            <p>lower, join, number_format, replace, slice, sort, ...</p>
+            <p>first, last, lower, upper, join, sort, raw, escape, ...</p>
             <p class="doc"><a href="http://twig.sensiolabs.org/doc/filters/index.html">twig.sensiolabs.org/doc/filters</a></p>
           </section>
-
+<!--
           <section>
             <h1>La syntaxe</h1>
             <h2>Les filtres first/last</h2>
@@ -216,17 +228,17 @@
 
             <p class="doc"><a href="http://twig.sensiolabs.org/doc/filters/escape.html">twig.sensiolabs.org/doc/filters/escape.html</a></p>
           </section>
-
+-->
           <section>
-            <h1>La syntaxe</h1>
             <h2>Les fonctions</h2>
             <pre><code data-trim>
               {{ node.created|date("d/m/Y") }}
             </code></pre>
-            <p>cycle, range, include, parent, random, ...</p>
+            <p>cycle(), range(), include(), parent(), random(), ...</p>
             <p class="doc"><a href="http://twig.sensiolabs.org/doc/functions/index.html">twig.sensiolabs.org/doc/functions</a></p>
           </section>
 
+<!--
           <section>
             <h1>La syntaxe</h1>
             <h2>Nommage des arguments</h2>
@@ -240,26 +252,31 @@ equivalent
 {{ "now"|date(timezone="Europe/Paris") }}
             </code></pre>
           </section>
-
+    -->
           <section>
-            <h1>La syntaxe</h1>
             <h2>Structures de controle</h2>
+            <p>if-else condition :</p>
             <pre><code data-trim>
 {% if ... %}
 {% else %}
 {% endif %}
             </code></pre>
+            <p>boucle for :</p>
             <pre><code data-trim>
 {% for i in 0..10 %}
   {{ i }}
 {% endfor %}
             </code></pre>
-            <p>autoescape, do, for, from, include, ...</p>
+            <p>For avec condition</p>
+            <pre><code data-trim>
+{% for user in users if user.active %}
+  <span>{{ user.name|e }}</span>
+{% endfor %}
+            </code></pre>
             <p class="doc"><a href="http://twig.sensiolabs.org/doc/tags/index.html">twig.sensiolabs.org/doc/tags</a></p>
           </section>
-
+<!--
           <section>
-            <h1>La syntaxe</h1>
             <h2>Structures de controle : for</h2>
             <p>Clé / valeur</p>
             <pre><code data-trim>
@@ -274,7 +291,8 @@ equivalent
 {% endfor %}
             </code></pre>
           </section>
-
+-->
+<!--
           <section>
             <h1>La syntaxe</h1>
             <h2>Structures de controle : for</h2>
@@ -314,9 +332,54 @@ equivalent
             <p></p>
             <p class="doc"><a href="http://twig.sensiolabs.org/doc/templates.html#math">twig.sensiolabs.org/doc/templates.html#math</a></p>
           </section>
+-->
+          <section>
+            <h2>Inclure un template dans un template ("templatception")</h2>
+              <pre><code data-trim>
+{% block body %}
+  <h1>Recent Articles</h1>
+  {% include 'articles.html' %}
+{% endblock %}
+            </code></pre>
+            <p>Inclusion de template via la balise {% include %}</p>
+            <p class="doc"><a href="http://twig.sensiolabs.org/doc/templates.html#including-other-templates">twig.sensiolabs.org/doc/templates.html#including-other-templates</a></p>
+          </section>
+<!--
+          <section>
+            <h2>Macros</h2>
+          </section>
+-->
+          <section>
+            <h2>Eténdre et surcharger un template</h2>
+            <p>base.html</p>
+            <pre><code data-trim>
+<head>
+  {# base.html #}
+  {% block head %}
+    <title>{% block title %}{% endblock %} - My Webpage</title>
+  {% endblock %}
+</head>
+            </code></pre>
+            <p>index.html</p>
+            <pre><code data-trim>
+<head>
+
+{% extends "base.html" %}
+
+{% block title %}Index{% endblock %}
+{% block head %}
+    {{ parent() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+</head>
+            </code></pre>
+            <p class="doc"><a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">twig.sensiolabs.org/doc/templates.html#template-inheritance</a></p>
+          </section>
 
           <section>
-            <h1>Extensions</h1>
+            <h2>Extensions</h2>
             <p>
               Permet d'ajouter ses propres tag, filtres &amp; fonctions
             </p>
@@ -329,6 +392,7 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
             <pre><code data-trim>
               {{ node.body|spip2drupal }}
             </code></pre>
+            <p class="doc"><a href="http://twig.sensiolabs.org/doc/extensions/index.html">twig.sensiolabs.org/doc/extensions/index.html</a></p>
           </section>
 
 

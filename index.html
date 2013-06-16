@@ -31,7 +31,7 @@
 		<div class="reveal">
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section id="home">
+				<section id="home" style="background-image: 'img/intro.png';">
 					<h1>{{ <span>Twig</span> }}</h1>
 					<h2>#dcparis13</h2>
 				</section>
@@ -52,6 +52,7 @@
 					<ul class="discret">
 						<li><a href="#/nous">Nous, c'est qui ?</a></li>
             <li><a href="#/twig">Twig, c'est quoi ?</a></li>
+            <li><a href="#/drupal">Drupal, un nouveau système, pourquoi ?</a></li>
             <li><a href="#/drupal-twig">Drupal &amp; Twig, c'est bon ?</a></li>
             <li><a href="#/exemples">Les exemples, c'est quand ?</a></li>
             <li><a href="#/questions">? ? ?</a></li>
@@ -97,6 +98,9 @@
 
           <section>
             <h1>Twig, c'est quoi ?</h1>
+          </section>
+
+          <section>
             <p>Moteur de template PHP</p>
             <p>Par Fabien Potencier, créateur de Symfony</p>
           </section>
@@ -334,6 +338,10 @@ equivalent
           </section>
 -->
           <section>
+            <p>C'est pas Awesome ?</p>
+          </section>
+
+          <section>
             <h2>Inclure un template dans un template ("templatception")</h2>
               <pre><code data-trim>
 {% block body %}
@@ -395,12 +403,16 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
             <p class="doc"><a href="http://twig.sensiolabs.org/doc/extensions/index.html">twig.sensiolabs.org/doc/extensions/index.html</a></p>
           </section>
 
+          <section>
+            <p>Awesome ++</p>
+          </section>
 
         </section>
 
-        <section id="drupal-twig">
+
+        <section id="drupal">
           <section>
-            <h1>Drupal &amp; Twig,<br> c'est bon ?</h1>
+            <h1>Drupal, pourquoi on en est arrivé là ?</h1>
           </section>
 
           <section>
@@ -412,62 +424,151 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
           </section>
 
           <section>
-            <h1>Drupal &amp; Twig</h1>
             <h2>#1 Mixed data type</h2>
             <p>
-              <b>D7</b> : Rien de normé, on peut manipuler du texte, des tableaux ou encore de objets
-              <br>
-              $node->nid || $page['content']
-            </p>
-            <p>
-              <b>Twig</b> : Tout est normé. Chaque variable est accessible de la même facon
+              <b>Drupal</b>, rien de normé dans la manipulation de variables
+              <br><br>
+              $classes || $node->nid || $page['content']
             </p>
           </section>
 
           <section>
-            <h1>Drupal &amp; Twig</h1>
             <h2>#2 Methodes d'affichage</h2>
             <p>
-              <b>D7</b> : print($variables); ou print render($variables);
+              <b>Drupal</b>, plusieurs solutions pour afficher du contenu
             </p>
             <p>
-              <b>Twig</b> : {{ variables }} suffit et évite les erreurs
+               print($variables); <br> ou <br> print render($variables);
             </p>
           </section>
 
           <section>
-            <h1>Drupal &amp; Twig</h1>
             <h2>#3 Surcharge du markup</h2>
             <p>
-              <b>D7</b> : Fonctions de theme ou templates
+              <b>Drupal</b>, différent moyen pour créer du HTML
             </p>
+            <p>
+              Fonctions de theme ou templates ?
+            </p>
+            <p>
+              node.tpl.php
+              <br>
+              theme_table()
+            </p>
+          </section>
+
+          <section>
+            <h2>#4 Manque de sécurité</h2>
+            <p>
+              <b>Drupal</b>, tout est accessible tel quel et rien n'est filtré par défaut.
+              Pas de sanitization.
+            </p>
+          </section>
+
+          <section>
+            <h2>#5 Drupal spécific</h2>
+            <p>
+              <b>Drupal</b>, son propre système de théming, ses fonctions maisons, ses lois, ses règles.
+            </p>
+          </section>
+
+          <section>
+            // @TODO : image de chat dépréssif.
+            // note : D7 qui devait simplifier la vie des thémeurs n'a fait que la compliquer.
+          </section>
+        </section>
+
+
+        <section id="drupal-twig">
+          <section>
+            <h1>Drupal &amp; Twig,<br> c'est bon ?</h1>
+          </section>
+
+          <section>
+            <h2>Est-ce qu'un moteur de template peut aider les themeurs ?</h2>
+          </section>
+
+          <section>
+            <h2>#1 Mixed data type</h2>
+            <p>
+              <b>D7</b> : Rien de normé<br>
+              <br>
+              <i>$classes - $node->nid - $page['content']</i>
+            </p>
+            <p>
+              <b>Twig</b> : Tout est normé !<br>
+              <br>
+              <i>{{ classes }}</i> - <i>{{ node.nid }}</i> - <i>{{ page.content }}</i>
+            </p>
+          </section>
+
+          <section>
+            <h2>#2 Methodes d'affichage</h2>
+            <p>
+              <b>D7</b> : <i>print($variables);</i> ou <i>render($variables);</i>
+            </p>
+            <p>
+              <b>Twig</b> : <i>{{ variables }}</i> suffit et évite les erreurs
+            </p>
+          </section>
+
+          <section>
+            <h2>#3 Surcharge du markup</h2>
+            <p>
+              <b>D7</b> : Fonctions de theme ou templates ?</p>
             <p>
               <b>Twig</b> : Tout devient un template .html.twig
             </p>
             <p>
-              node.tpl.php >>  node.html.twig
+              <i>node.tpl.php</i><span style="font-size:25px;">  >>  </span><i>node.html.twig</i>
               <br>
-              theme_table() >> tables.html.twig
-              <!-- // TODO check with Jen if it's in core now ? -->
+              <i>theme_table()</i><span style="font-size:25px;">  >>  </span><i>tables.html.twig</i>
             </p>
           </section>
 
           <section>
-            <h1>Drupal &amp; Twig</h1>
             <h2>#4 Manque de sécurité</h2>
             <p>
-              <b>D7</b> : Tout est accessible tel quel et rien n'est filtré par défaut.
-              Pas de sanitization.
+              <b>D7</b> : Filtrage de l'affichage des variables
             </p>
             <p>
-              <b>Twig</b> : Escape automatique et si vous voulez quelque chose de non sécurisé, il faut le vouloir :)
+              <b>Twig</b> : Filtrage automatique par défaut<br>
               <br>
-              La plupart des fonctions php ne sont pas executable ! Fini les requetes SQL dans les templates !
+              <i>{{ variable|raw }}</i>
             </p>
           </section>
 
           <section>
-            <h1>Drupal &amp; Twig</h1>
+            <h2>#4.2 Manque de sécurité</h2>
+            <p>
+              <b>Twig</b> : La plupart des fonctions PHP ne peuvent pas être exécutée depuis un template.
+            </p>
+            <p>Fini les requetes SQL dans les templates ! #Idiot proof</p>
+            <pre><code data-trim>
+               <?php db_query('DROP TABLE {node}');  ?>
+            </code></pre>
+          </section>
+
+          <section>
+            <img src=""> <!-- image roulette russe : laisser executer des requetes SQL à un thémeur ca revient à lui donenr un flingue charger. // Retrouver la citation.-->
+          </section>
+
+
+          <section>
+            <h2>#5 Drupal spécific</h2>
+            <p>
+              <b>Drupal</b> : Système maison.
+            </p>
+            <p>
+              <b>Twig</b> : Un outil utilisé et réutilisable sur des projets non Drupal. <br>
+                Similaire aux autres moteurs de templates.<br>
+                Ressemble plus à du HTML qu'à du PHP.
+              <br>
+            </p>
+          </section>
+
+<!--
+          <section>
             <h2>Inconvenients</h2>
             <p>
               Nouvelle syntaxe à apprendre
@@ -489,6 +590,32 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
               Travail plus simple pour les themeurs
             </p>
           </section>
+-->
+
+          <section>
+            <h2>Est-ce que Twig va aider les themeurs ?</h2>
+          </section>
+          <section>
+            <h1>OUI !</h1>
+            <p style="color:green">
+              <span style="font-size:45px;">Lisible</span> - <span style="font-size:35px;">Moins de code</span><br>
+              <span style="font-size:60px;">Sécurisé</span> - <span>Systeme unifié</span> - <span style="font-size:40px;">Idiot proof</span><br>
+              <span style="font-size:40px;">Réutilisable</span> - <span style="font-size:70px;">Simple</span><br>
+              <span style="font-size:50px;">Facile</span> - <span style="font-size:40px;">Extensible</span><br>
+              <span style="color:red; font-size: 25px;">Nouvelle syntaxe à apprendre</span>
+            </p>
+          </section>
+
+          <section>
+            <h2>L'initiative Twig</h2>
+            <ul>
+              <li><b>Fev/Mar 12</b> - Discussion d'une alternative<br>
+                 <span class="doc"><a  href="https://drupal.org/node/1441320">drupal.org/node/1441320</a></span></li><br>
+              <li><b>Avril 12</b> - Code sprint</li><br>
+              <li><b>Juin 12</b> - Twig est intégré à Drupal 8<br>
+              <span class="doc"><a  href="http://fabianx.drupalgardens.com/blog/twig-core-there-lots-do-left">http://fabianx.drupalgardens.com/blog/twig-core-there-lots-do-left</a></span></li>
+            </ul>
+          </section>
 
           <section>
             <h1>Drupal &amp; Twig</h1>
@@ -506,7 +633,6 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
           </section>
 
           <section>
-            <h1>Drupal &amp; Twig</h1>
             <h2>Fonctions</h2>
             <p>
               hide() / show()
@@ -515,7 +641,6 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
           </section>
 
           <section>
-            <h1>Drupal &amp; Twig</h1>
             <h2>Debug</h2>
             <p>Dans les fichiers de templates .html.twig</p>
             <pre><code data-trim>
@@ -527,7 +652,6 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
           </section>
 
           <section>
-            <h1>Drupal &amp; Twig</h1>
             <h2>Debug</h2>
             <p>Dans settings.php</p>
             <pre><code data-trim>
@@ -570,13 +694,42 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
 
         <section id="exemples">
           <section>
-            <h1>Les exemples,<br> c'est quand ?</h1>
+            <h2>Les exemples,<br> c'est quand ?</h2>
           </section>
+
+          <section>
+            <h2>Ancien block.tpl.php</h2>
+          </section>
+
+          <section>
+            <h2>Nouveau block.html.twig</h2>
+          </section>
+
+          <section>
+            <h2>Ancien node.tpl.php</h2>
+          </section>
+
+          <section>
+            <h2>Nouveau node.html.twig</h2>
+          </section>
+
+          <section>
+            <h2>Ancien theme_breadcrumb()</h2>
+          </section>
+
+          <section>
+            <h2>Nouveau breadcrumb.html.twig</h2>
+          </section>
+
+          <section>
+            <h2>Plus ? tout dépend du temps...</h2>
+          </section>
+
         </section>
 
         <section id="questions">
           <section>
-            <h1>? ? ?</h1>
+            <h1>Questions ?</h1>
           </section>
         </section>
 

@@ -353,7 +353,7 @@ equivalent
   {% include 'articles.html' %}
 {% endblock %}
             </code></pre>
-            <p>Inclusion de template via la balise {% include %}</p>
+            <p>Inclusion de template via la balise <code class="inline">{% include %}</code></p>
             <p class="doc"><a href="http://twig.sensiolabs.org/doc/templates.html#including-other-templates">twig.sensiolabs.org/doc/templates.html#including-other-templates</a></p>
           </section>
 <!--
@@ -432,7 +432,9 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
             <p>
               <b>Drupal</b>, rien de normé dans la manipulation de variables
               <br><br>
-              $classes || $node->nid || $page['content']
+              <pre><code data-trim>$classes</code></pre>
+              <pre><code data-trim>$node->nid</code></pre>
+              <pre><code data-trim>$page['content']</code></pre>
             </p>
           </section>
 
@@ -441,9 +443,8 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
             <p>
               <b>Drupal</b>, plusieurs solutions pour afficher du contenu
             </p>
-            <p>
-               print($variables); <br> ou <br> print render($variables);
-            </p>
+            <pre><code data-trim>print($variables);</code></pre>
+            <pre><code data-trim>print render($variables);</code></pre>
           </section>
 
           <section>
@@ -455,9 +456,9 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
               Fonctions de theme ou templates ?
             </p>
             <p>
-              node.tpl.php
+              <code class="inline">node.tpl.php</code>
               <br>
-              theme_table()
+              <code class="inline">theme_table()</code>
             </p>
           </section>
 

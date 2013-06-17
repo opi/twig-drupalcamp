@@ -2,6 +2,14 @@
 /* ************ GLOBAL ************ */
 .reveal h1 {
   margin-bottom:.25em;
+  font-size:3em;
+  text-transform: none;
+  /*font-variant: small-caps;*/
+}
+.reveal h2 {
+  text-transform: none;
+  font-size:1.9em;
+  font-variant: small-caps;
 }
 
 #home h1 {
@@ -27,6 +35,14 @@
 .reveal pre.long {
   width:100%;
 }
+
+.reveal code.inline {
+  font-size: 0.95em;
+  font-family: monospace;
+  letter-spacing: -0.15em;
+  color:#3F3F3F;
+}
+
 
 /* ************ INTRO ************ */
 #intro {

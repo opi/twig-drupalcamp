@@ -699,26 +699,72 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
 
           <section>
             <h2>Ancien block.tpl.php</h2>
+            <pre class="long"><code data-trim>
+&lt;div id="&lt;?php print $block_html_id; ?>"
+  class="&lt;?php print $classes; ?>"&lt;?php print $attributes; ?>>
+  &lt;?php print render($title_prefix); ?>
+  &lt;?php if ($block->subject): ?>
+    &lt;h2&lt;?php print $title_attributes; ?>>
+      &lt;?php print $block->subject ?>
+    &lt;/h2>
+  &lt;?php endif;?>
+  &lt;?php print render($title_suffix); ?>
+  &lt;div class="content"&lt;?php print $content_attributes; ?>>
+    &lt;?php print $content ?>
+  &lt;/div>
+&lt;/div>
+            </code></pre>
           </section>
 
           <section>
             <h2>Nouveau block.html.twig</h2>
-          </section>
-
-          <section>
-            <h2>Ancien node.tpl.php</h2>
-          </section>
-
-          <section>
-            <h2>Nouveau node.html.twig</h2>
+            <pre class="long"><code data-trim>
+&lt;div{{ attributes }}>
+  {{ title_prefix }}
+  {% if label %}
+    &lt;h2{{ title_attributes }}>{{ label }}&lt;/h2>
+  {% endif %}
+  {{ title_suffix }}
+  &lt;div{{ content_attributes }}>
+    {{ content }}
+  &lt;/div>
+&lt;/div>
+            </code></pre>
           </section>
 
           <section>
             <h2>Ancien theme_breadcrumb()</h2>
+            <pre class="long"><code data-trim>
+function theme_breadcrumb($variables) {
+  $breadcrumb = $variables['breadcrumb'];
+
+  if (!empty($breadcrumb)) {
+    // Provide a navigational heading to give context for breadcrumb links to
+    // screen-reader users. Make the heading invisible with .element-invisible.
+    $output = '<h2 class="element-invisible">' . t('You are here') . '</h2>';
+
+    $output .= '<div class="breadcrumb">' . implode(' » ', $breadcrumb) . '</div>';
+    return $output;
+  }
+}
+            </code></pre>
           </section>
 
           <section>
             <h2>Nouveau breadcrumb.html.twig</h2>
+            <pre class="long"><code data-trim>
+{% if breadcrumb %}
+  &lt;nav class="breadcrumb" role="navigation">
+    &lt;h2 class="element-invisible">{{ 'You are here'|t }}&lt;/h2>
+    &lt;ol>
+    {% for item in breadcrumb %}
+      &lt;li>{{ item }}&lt;/li>
+    {% endfor %}
+    &lt;/ol>
+  &lt;/nav>
+{% endif %}
+            </code></pre>
+            <p class="doc"><a href="https://drupal.org/node/1939066#comment-7288060">#1939066</a> (RTBC)</p>
           </section>
 
           <section>

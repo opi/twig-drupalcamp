@@ -28,6 +28,43 @@
   width:100%;
 }
 
+/* ************ INTRO ************ */
+#intro {
+/*  background:url(../img/intro.png);
+  width:1921px;
+  height:1081px;*/
+}
+
+.intro .reveal .slides {
+  width:100% !important;
+  height:100% !important;
+  zoom:1 !important;
+  top:0 !important;
+  left:0 !important;
+  bottom:0 !important;
+  right:0 !important;
+  transform:none !important;
+
+}
+.intro .reveal .slides #intro {
+  top:0 !important;
+  left:0 !important;
+  bottom:0 !important;
+  right:0 !important;
+  padding:0;margin:0;
+  background: #fff;
+}
+.intro #intro img {
+  margin:0;
+  background:0;
+  max-width:100%;
+  max-height:100%;
+  position:relative;z-index:10;
+  border:0;
+  box-shadow:none;
+}
+.intro #footer {display:none;}
+
 /* ************ HOME ************ */
 
 

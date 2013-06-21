@@ -17,6 +17,7 @@
 }
 #home h1 span {display:inline-block;vertical-align: middle;}
 
+
 .reveal a.discret,
 .reveal .discret a {color:#657b83;}
 
@@ -78,6 +79,11 @@
   position:relative;z-index:10;
   border:0;
   box-shadow:none;
+}
+.intro #intro p {
+  position:relative;
+  margin-top:-50%;
+  color:#fff;
 }
 .intro #footer {display:none;}
 

@@ -115,20 +115,23 @@
           </section>
 
           <section>
-            <h1>Un peu d'histoire</h1>
+            <h1 class="repeat">Twig, c'est quoi ?</h1>
+            <h2>Un peu d'histoire</h2>
             <p>A la base Twig était un moteur de template ecrit en python "Jinja2 " par Armin Ronacher.</p>
             <p>Repris par Fabien Potencier en 2009 pour accomplir son plan de domination du monde.</p>
           </section>
 
           <section>
-            <h1>Comment ca marche ?</h1>
+            <h1 class="repeat">Twig, c'est quoi ?</h1>
+            <h2>Comment ca marche ?</h2>
             <p>
               <img src="img/twig_compilation.png" />
             </p>
           </section>
 
           <section>
-            <h1>Les avantages</h1>
+            <h1 class="repeat">Twig, c'est quoi ?</h1>
+            <h2>Les avantages</h2>
             <p>
               <ul>
               <li><b>Extensible</b></li>
@@ -144,7 +147,8 @@
           </section>
 
           <section>
-            <h1>Les incovénients</h1>
+            <h1 class="repeat">Twig, c'est quoi ?</h1>
+            <h2>Les incovénients</h2>
             <p>
               <ul>
               <li><b>Nouveau langage à apprendre</b></li>
@@ -153,12 +157,14 @@
           </section>
 
           <section>
-            <h1>La syntaxe</h1>
+            <h1 class="repeat">Twig, c'est quoi ?</h1>
+            <h2>La syntaxe</h2>
             <p>Le caractère important est l'accolade</p>
             <p class="large"><strong>{ }</strong></p>
           </section>
 
           <section>
+            <h1 class="repeat">Twig, c'est quoi ?</h1>
             <h2>Les commentaires</h2>
             <pre><code data-trim>
               {# Ici un commentaire #}
@@ -167,6 +173,7 @@
           </section>
 
           <section>
+            <h1 class="repeat">Twig, c'est quoi ?</h1>
             <h2>Affichage de variable</h2>
             <pre><code data-trim>
               <h1>{{ title }}</h1>
@@ -178,6 +185,7 @@
           </section>
 
           <section>
+            <h1 class="repeat">Twig, c'est quoi ?</h1>
             <h2>Plongée dans les variables</h2>
             <pre><code data-trim>
               {{ node.field_description }}
@@ -189,6 +197,7 @@
           </section>
 
           <section>
+            <h1 class="repeat">Twig, c'est quoi ?</h1>
             <h2>Concaténations de variables</h2>
             <pre><code data-trim>
               {{ "Rédigé par " ~ node.author ~ "." }}
@@ -196,6 +205,7 @@
           </section>
 
           <section>
+            <h1 class="repeat">Twig, c'est quoi ?</h1>
             <h2>Les filtres</h2>
             <pre><code data-trim>
               <h1>{{ title|capitalize }}</h1>
@@ -209,6 +219,7 @@
           </section>
 <!--
           <section>
+            <h1 class="repeat">Twig, c'est quoi ?</h1>
             <h1>La syntaxe</h1>
             <h2>Les filtres first/last</h2>
             <pre><code data-trim>
@@ -243,6 +254,7 @@
           </section>
 -->
           <section>
+            <h1 class="repeat">Twig, c'est quoi ?</h1>
             <h2>Les fonctions</h2>
             <pre><code data-trim>
               {{ node.created|date("d/m/Y") }}
@@ -267,6 +279,7 @@ equivalent
           </section>
     -->
           <section>
+            <h1 class="repeat">Twig, c'est quoi ?</h1>
             <h2>Structures de controle</h2>
             <p>if-else condition :</p>
             <pre><code data-trim>
@@ -351,6 +364,7 @@ equivalent
           </section>
 
           <section>
+            <h1 class="repeat">Twig, c'est quoi ?</h1>
             <h2>Inclure un template dans un template ("templatception")</h2>
               <pre><code data-trim>
 {% block body %}
@@ -367,6 +381,7 @@ equivalent
           </section>
 -->
           <section>
+            <h1 class="repeat">Twig, c'est quoi ?</h1>
             <h2>Eténdre et surcharger un template</h2>
             <p>base.html</p>
             <pre><code data-trim>
@@ -396,6 +411,7 @@ equivalent
           </section>
 
           <section>
+            <h1 class="repeat">Twig, c'est quoi ?</h1>
             <h2>Extensions</h2>
             <p>
               Permet d'ajouter ses propres tag, filtres &amp; fonctions
@@ -433,6 +449,7 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
           </section>
 
           <section>
+            <h1 class="repeat">Drupal &amp; Twig</h1>
             <h2>#1 Mixed data type</h2>
             <p>
               <b>Drupal</b>, rien de normé dans la manipulation de variables
@@ -444,6 +461,7 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
           </section>
 
           <section>
+            <h1 class="repeat">Drupal &amp; Twig</h1>
             <h2>#2 Methodes d'affichage</h2>
             <p>
               <b>Drupal</b>, plusieurs solutions pour afficher du contenu
@@ -453,6 +471,7 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
           </section>
 
           <section>
+            <h1 class="repeat">Drupal &amp; Twig</h1>
             <h2>#3 Surcharge du markup</h2>
             <p>
               <b>Drupal</b>, différent moyen pour créer du HTML
@@ -468,6 +487,7 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
           </section>
 
           <section>
+            <h1 class="repeat">Drupal &amp; Twig</h1>
             <h2>#4 Manque de sécurité</h2>
             <p>
               <b>Drupal</b>, tout est accessible tel quel et rien n'est filtré par défaut.
@@ -476,6 +496,7 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
           </section>
 
           <section>
+            <h1 class="repeat">Drupal &amp; Twig</h1>
             <h2>#5 Drupal spécific</h2>
             <p>
               <b>Drupal</b>, son propre système de théming, ses fonctions maisons, ses lois, ses règles.
@@ -499,6 +520,7 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
           </section>
 
           <section>
+            <h1 class="repeat">Drupal &amp; Twig</h1>
             <h2>#1 Mixed data type</h2>
             <p>
               <b>D7</b> : Rien de normé<br>
@@ -513,6 +535,7 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
           </section>
 
           <section>
+            <h1 class="repeat">Drupal &amp; Twig</h1>
             <h2>#2 Methodes d'affichage</h2>
             <p>
               <b>D7</b> : <i>print($variables);</i> ou <i>render($variables);</i>
@@ -523,6 +546,7 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
           </section>
 
           <section>
+            <h1 class="repeat">Drupal &amp; Twig</h1>
             <h2>#3 Surcharge du markup</h2>
             <p>
               <b>D7</b> : Fonctions de theme ou templates ?</p>
@@ -537,6 +561,7 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
           </section>
 
           <section>
+            <h1 class="repeat">Drupal &amp; Twig</h1>
             <h2>#4 Manque de sécurité</h2>
             <p>
               <b>D7</b> : Filtrage de l'affichage des variables
@@ -549,6 +574,7 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
           </section>
 
           <section>
+            <h1 class="repeat">Drupal &amp; Twig</h1>
             <h2>#4.2 Manque de sécurité</h2>
             <p>
               <b>Twig</b> : La plupart des fonctions PHP ne peuvent pas être exécutée depuis un template.
@@ -565,6 +591,7 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
 
 
           <section>
+            <h1 class="repeat">Drupal &amp; Twig</h1>
             <h2>#5 Drupal spécific</h2>
             <p>
               <b>Drupal</b> : Système maison.
@@ -617,6 +644,7 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
           </section>
 
           <section>
+            <h1 class="repeat">Drupal &amp; Twig</h1>
             <h2>L'initiative Twig</h2>
             <ul>
               <li><b>Fev/Mar 12</b> - Discussion d'une alternative<br>
@@ -635,7 +663,7 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
           </section>
 
           <section>
-            <h1>Drupal &amp; Twig</h1>
+            <h1 class="repeat">Drupal &amp; Twig</h1>
             <h2>Filtre t</h2>
             <p>
               Remplace t()
@@ -650,6 +678,7 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
           </section>
 
           <section>
+            <h1 class="repeat">Drupal &amp; Twig</h1>
             <h2>Fonctions</h2>
             <p>
               hide() / show()
@@ -658,6 +687,7 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
           </section>
 
           <section>
+            <h1 class="repeat">Drupal &amp; Twig</h1>
             <h2>Debug</h2>
             <p>Dans les fichiers de templates .html.twig</p>
             <pre><code data-trim>
@@ -669,6 +699,7 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
           </section>
 
           <section>
+            <h1 class="repeat">Drupal &amp; Twig</h1>
             <h2>Debug</h2>
             <p>Dans settings.php</p>
             <pre><code data-trim>
@@ -692,7 +723,7 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
           </section>
 
           <section>
-            <h1>Drupal &amp; Twig</h1>
+            <h1 class="repeat">Drupal &amp; Twig</h1>
             <h2>Debug</h2>
             <p>Dans settings.php</p>
             <p>Recompilation des templates à chaque changements</p>
@@ -711,10 +742,11 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
 
         <section id="exemples">
           <section>
-            <h2>Les exemples,<br> c'est quand ?</h2>
+            <h1>Les exemples,<br> c'est quand ?</h1>
           </section>
 
           <section>
+            <h1 class="repeat">Exemples</h1>
             <h2>Ancien block.tpl.php</h2>
             <pre class="long"><code data-trim>
 &lt;div id="&lt;?php print $block_html_id; ?>"
@@ -734,6 +766,7 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
           </section>
 
           <section>
+            <h1 class="repeat">Exemples</h1>
             <h2>Nouveau block.html.twig</h2>
             <pre class="long"><code data-trim>
 &lt;div{{ attributes }}>
@@ -750,6 +783,7 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
           </section>
 
           <section>
+            <h1 class="repeat">Exemples</h1>
             <h2>Ancien theme_breadcrumb()</h2>
             <pre class="long"><code data-trim>
 function theme_breadcrumb($variables) {
@@ -768,6 +802,7 @@ function theme_breadcrumb($variables) {
           </section>
 
           <section>
+            <h1 class="repeat">Exemples</h1>
             <h2>Nouveau breadcrumb.html.twig</h2>
             <pre class="long"><code data-trim>
 {% if breadcrumb %}
@@ -785,6 +820,7 @@ function theme_breadcrumb($variables) {
           </section>
 
           <section>
+            <h1 class="repeat">Exemples</h1>
             <h2>Plus ? tout dépend du temps...</h2>
           </section>
 

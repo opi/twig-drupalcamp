@@ -81,9 +81,13 @@
   box-shadow:none;
 }
 .intro #intro p {
-  position:relative;
-  margin-top:-50%;
-  color:#fff;
+  position: absolute;
+  color: #fff;
+  top: 37%;
+  left: 0;
+  right: 0;
+  color: #fff;
+  z-index: 10;
 }
 .intro #footer {display:none;}
 

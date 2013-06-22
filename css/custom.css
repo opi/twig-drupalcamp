@@ -77,6 +77,8 @@
   bottom:0 !important;
   right:0 !important;
   padding:0;margin:0;
+}
+.full-img .reveal .slides #intro {
   background: #fff;
 }
 .full-img .reveal .slides section img {

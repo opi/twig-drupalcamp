@@ -64,7 +64,7 @@
             <li><a href="#/drupal">Drupal, un nouveau système, pourquoi ?</a></li>
             <li><a href="#/drupal-twig">Drupal &amp; Twig, c'est bon ?</a></li>
             <li><a href="#/exemples">Les exemples, c'est quand ?</a></li>
-            <li><a href="#/questions">? ? ?</a></li>
+            <li><a href="#/questions">Question ?</a></li>
 					</ul>
 				</section>
 
@@ -191,7 +191,7 @@
               {{ node.field_description }}
             </code></pre>
             <pre><code data-trim>
-              &lt;div {{item.attributes}}&gt;{{ item.data }}&lt;/div&gt;
+              &lt;div {{item.attributes}} &gt; {{ item.data }} &lt;/div&gt;
             </code></pre>
             <p>Peu importe la source (array ou object)</p>
           </section>
@@ -293,7 +293,7 @@ equivalent
   {{ i }}
 {% endfor %}
             </code></pre>
-            <p>For avec condition</p>
+            <p>For avec condition :</p>
             <pre><code data-trim>
 {% for user in users if user.active %}
   <span>{{ user.name|e }}</span>
@@ -360,12 +360,12 @@ equivalent
           </section>
 -->
           <section>
-            <p>C'est pas Awesome ?</p>
+            <p>C'est pas génial ?</p>
           </section>
 
           <section>
             <h1 class="repeat">Twig, c'est quoi ?</h1>
-            <h2>Inclure un template dans un template ("templatception")</h2>
+            <h2>Inclure un template dans un template<br/>("templatception")</h2>
               <pre><code data-trim>
 {% block body %}
   <h1>Recent Articles</h1>
@@ -429,7 +429,8 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
           </section>
 
           <section>
-            <p>Awesome ++</p>
+            <h2>Awesome ++</H2>
+            <img src="img/happy_dog.jpg" />
           </section>
 
         </section>
@@ -437,7 +438,7 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
 
         <section id="drupal">
           <section>
-            <h1>Drupal, pourquoi on en est arrivé là ?</h1>
+            <h1>Drupal, pourquoi on en est<br/>arrivé là ?</h1>
           </section>
 
           <section>
@@ -479,11 +480,8 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
             <p>
               Fonctions de theme ou templates ?
             </p>
-            <p>
-              <code class="inline">node.tpl.php</code>
-              <br>
-              <code class="inline">theme_table()</code>
-            </p>
+              <pre><code>node.tpl.php</code></pre>
+              <pre><code>theme_table()</code></pre>
           </section>
 
           <section>
@@ -504,8 +502,7 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
           </section>
 
           <section>
-            // @TODO : image de chat dépréssif.
-            // note : D7 qui devait simplifier la vie des thémeurs n'a fait que la compliquer.
+            <img src="img/drunked_cat.jpg" />
           </section>
         </section>
 
@@ -523,14 +520,14 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
             <h1 class="repeat">Drupal &amp; Twig</h1>
             <h2>#1 Mixed data type</h2>
             <p>
-              <b>D7</b> : Rien de normé<br>
+              <b>Drupal 7</b> : Rien de normé<br>
               <br>
-              <i>$classes - $node->nid - $page['content']</i>
+              <pre><code data-trim>$classes - $node->nid - $page['content']</pre></code>
             </p>
             <p>
               <b>Twig</b> : Tout est normé !<br>
               <br>
-              <i>{{ classes }}</i> - <i>{{ node.nid }}</i> - <i>{{ page.content }}</i>
+              <pre><code data-trim>{{ classes } - {{ node.nid }} - {{ page.content }}</code></pre>
             </p>
           </section>
 
@@ -538,10 +535,13 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
             <h1 class="repeat">Drupal &amp; Twig</h1>
             <h2>#2 Methodes d'affichage</h2>
             <p>
-              <b>D7</b> : <i>print($variables);</i> ou <i>render($variables);</i>
+              <b>Drupal 7</b> :
+              <pre><code data-trim>print($variables);</code></pre>
+              <pre><code data-trim>print render($variables);</code></pre>
             </p>
             <p>
-              <b>Twig</b> : <i>{{ variables }}</i> suffit et évite les erreurs
+              <b>Twig</b> :
+              <pre><code data-trim>{{ variables }}</code></pre>
             </p>
           </section>
 
@@ -549,27 +549,30 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
             <h1 class="repeat">Drupal &amp; Twig</h1>
             <h2>#3 Surcharge du markup</h2>
             <p>
-              <b>D7</b> : Fonctions de theme ou templates ?</p>
+              <b>Drupal 7</b> : Fonctions de theme ou templates ?</p>
             <p>
               <b>Twig</b> : Tout devient un template .html.twig
             </p>
-            <p>
-              <i>node.tpl.php</i><span style="font-size:25px;">  >>  </span><i>node.html.twig</i>
-              <br>
-              <i>theme_table()</i><span style="font-size:25px;">  >>  </span><i>tables.html.twig</i>
-            </p>
+            <pre><code data-trim>
+              node.tpl.php >> node.html.twig
+            </code></pre>
+            <pre><code data-trim>
+              theme_table() >> tables.html.twig
+            </code></pre>
+
           </section>
 
           <section>
             <h1 class="repeat">Drupal &amp; Twig</h1>
             <h2>#4 Manque de sécurité</h2>
             <p>
-              <b>D7</b> : Filtrage de l'affichage des variables
+              <b>Drupal 7</b> : Filtrage de l'affichage des variables
             </p>
             <p>
               <b>Twig</b> : Filtrage automatique par défaut<br>
-              <br>
-              <i>{{ variable|raw }}</i>
+              <pre><code data-trim>
+              {{ variable|raw }}
+              </code></pre>
             </p>
           </section>
 
@@ -584,11 +587,6 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
                <?php db_query('DROP TABLE {node}');  ?>
             </code></pre>
           </section>
-
-          <section>
-            <img src=""> <!-- image roulette russe : laisser executer des requetes SQL à un thémeur ca revient à lui donenr un flingue charger. // Retrouver la citation.-->
-          </section>
-
 
           <section>
             <h1 class="repeat">Drupal &amp; Twig</h1>
@@ -634,12 +632,12 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
           </section>
           <section>
             <h1>OUI !</h1>
-            <p style="color:green">
+            <p style="color:#287824">
               <span style="font-size:45px;">Lisible</span> - <span style="font-size:35px;">Moins de code</span><br>
               <span style="font-size:60px;">Sécurisé</span> - <span>Systeme unifié</span> - <span style="font-size:40px;">Idiot proof</span><br>
               <span style="font-size:40px;">Réutilisable</span> - <span style="font-size:70px;">Simple</span><br>
               <span style="font-size:50px;">Facile</span> - <span style="font-size:40px;">Extensible</span><br>
-              <span style="color:red; font-size: 25px;">Nouvelle syntaxe à apprendre</span>
+              <span style="color:#8C0303; font-size: 25px;">Nouvelle syntaxe à apprendre</span>
             </p>
           </section>
 
@@ -818,12 +816,17 @@ function theme_breadcrumb($variables) {
             </code></pre>
             <p class="doc"><a href="https://drupal.org/node/1939066#comment-7288060">#1939066</a> (RTBC)</p>
           </section>
+        </section>
 
+        <section id="contribuez">
           <section>
-            <h1 class="repeat">Exemples</h1>
-            <h2>Plus ? tout dépend du temps...</h2>
+            <h1>En savoir plus ? Participer ?</h1>
+            <p>Toutes les infos sur l'initiative ici :</span><br />
+            <span class="doc"><a href="https://drupal.org/sandbox/pixelmord/1750250">https://drupal.org/sandbox/pixelmord/1750250</a></span>
+            <p>La TODO list:</p>
+            <span class="doc"><a href="https://groups.drupal.org/node/278968">groups.drupal.org/node/278968</a></span>
+            <p>IRC: #drupal-twig</p>
           </section>
-
         </section>
 
         <section id="questions">
@@ -870,8 +873,8 @@ function theme_breadcrumb($variables) {
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					// { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					// { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
 					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]

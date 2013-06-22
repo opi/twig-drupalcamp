@@ -44,7 +44,7 @@
 .reveal pre.long {
   width:100%;
 }
-
+.reveal code span:hover {color:#fff;background:#000;}
 .reveal code.inline {
   font-size: 0.95em;
   font-family: monospace;

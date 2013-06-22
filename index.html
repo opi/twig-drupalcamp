@@ -693,11 +693,11 @@ $filter = new Twig_SimpleFilter('spip2drupal', function ($string) {
             <h2>Debug</h2>
             <p>Dans les fichiers de templates .html.twig</p>
             <pre><code data-trim>
-              {{ dump() }}
+              &lt;pre>{{ dump() }}&lt;/pre>
             </code></pre>
-            <p><em>
-              Équivalent de var_dump(get_defined_vars());
-            </em></p>
+            <p>
+              Équivalent de <code class="inline">var_dump(get_defined_vars());</code>
+            </p>
           </section>
 
           <section>
